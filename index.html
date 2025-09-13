@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omale Michael | Frontend Developer & UI/UX Designer Portfolio">
+    <meta name="author" content="Omale Michael">
+    <meta name="keywords" content="Frontend Developer, React, JavaScript, HTML, CSS, UI/UX Designer, Lagos, Nigeria">
+
+    <!-- Title -->
+    <title>Omale Michael | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/responsiveness.css">
+
+<body>
+    <!-- Logo -->
+
+    <!-- Animated Background Canvas -->
+    <canvas id="web-bg"></canvas>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="heroPage">
+        <div class="hero-container">
+            <!-- Left Content -->
+            <div class="hero-text">
+                <h1 class="hero-name">Omale Michael</h1>
+                <h2 class="hero-role">Frontend Developer | UI/UX Designer</h2>
+                <p class="hero-tagline">
+                    versatile technology professional, with expertise in
+                    creating responsive web applications,cloud solutions
+                    and software systems unsing modern technologies
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-laptop-code"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="hero-socials">
+                    <a href="https://github.com/frontenddevmichael" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/michael-omale-b63406354/" title="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/michael.omale.16/" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Content (Profile Image or Logo) -->
+            <div class="hero-image">
+                <img src="assets/Profile.png" alt="Omale Michael" class="profile-img">
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know more about my journey and expertise</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm Omale Michael</h3>
+                    <p>
+                        I'm a passionate Frontend Developer and the founder of <strong>OCM Devs</strong>, based in
+                        Lagos, Nigeria. Currently
+                        pursuing a degree in Computer Science, I’m dedicated to learning and mastering JavaScript and
+                        React to build
+                        beautiful, functional, and user-centered digital experiences.
+                    </p>
+                    <p>
+                        I have a growing interest in <strong>AI development</strong> and actively explore tools like
+                        <em>Loveable</em>,
+                        <em>MGX</em>, and other AI platforms to integrate intelligent solutions into web projects.
+                    </p>
+                    <p>
+                        As a developer, I aim to create responsive web applications that not only look great but also
+                        provide seamless and
+                        engaging user experiences across all devices.
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>2+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100%</h4>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="/assets/magicpattern-blob-1757692027800.png" alt="" class="blob">
+                    <div class="image-container">
+                        <img src="/assets/Profile.png" alt="Omale Michael" class="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+        </div>
+
+        <div class="container">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>HTML5</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>CSS3/SCSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>Design & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>Loveable</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Claude</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Git/GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Responsive Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/Project1.png" alt="Trust Okoduwa Portfolio page">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://trust-okoduwa.vercel.app/" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/frontenddevmichael/Trust-Okoduwa" class="project-link"
+                                    title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Trust Okoduwa — Personal Brand & Portfolio Website</h3>
+                        <p>I designed and developed the personal portfolio website for Trust Okoduwa, a creative
+                            designer and brand strategist. The
+                            site was built to highlight his services, featured projects, and personal brand in a modern,
+                            professional, and fully
+                            responsive layout.</p>
+                        <div class="project-tech">
+                            <span>html</span>
+                            <span>vanilla.js</span>
+                            <span>css</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/Project2.png" alt="Task Management App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://google-loginreplica.vercel.app/" class="project-link"
+                                    title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/frontenddevmichael/googleLoginreplica" class="project-link"
+                                    title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Google Login Replica – UI Adaptation</h3>
+                        <p>This project is a pixel-perfect replica of Google’s login interface, created to showcase my
+                            ability to analyze, adapt,
+                            and rebuild everyday UI patterns. The focus was on mastering layout structure, typography,
+                            spacing, and responsiveness
+                            while ensuring a clean and professional look.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/assets/Project3.png" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://www.aihackathon.africa/" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Africa AI Hackathon – Official Website</h3>
+                        <p>I worked as the Frontend Developer for the Africa AI Hackathon platform, where I combined
+                            React.js development with AI
+                            prompt engineering to deliver a fast, responsive, and professional website. Using Lovable, I
+                            showcased my versatility
+                            and speed in leveraging AI-assisted development to bring the project to life.</p>
+                        <div class="project-tech">
+                            <span>React.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Contact" id="contact">
+        <div class="header">
+            <h1>Get in touch</h1>
+            <p>Have a project in mind or want to discuss potential opportunities? I'd love to hear from you! Fill out
+                the form below and I'll get back to you soon.</p>
+        </div>
+        <div class="Contact-container">
+            <div class="Contact-form">
+                <div class="nameInp">
+                    <form action="https://formspree.io/f/mgvlqqey" method="POST">
+                        <label>
+                            Your email:
+                            <input type="email" name="email" placeholder="someone@example.com">
+                        </label>
+                        <label for="subject">Subject*</label>
+                        <input type="text" id="subject" placeholder="What is this regarding?">
+                        <label>
+                            Your message:
+                            <textarea name="message" placeholder="write your Message..."></textarea>
+                        </label>
+
+                        <!-- your other form fields go here -->
+                        <button type="submit">Send <i class="fas fa-paper-plane" id="btnID"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="Contact-info" id="contact-me">
+                <h1>Contact Information</h1>
+                <div class="info-details">
+                    <div class="info-detail">
+                        <i class="fas fa-map-marker-alt"></i><span> Lagos, Nigeria</span>
+                    </div>
+                    <div class="info-detail">
+                        <i class="fa-solid fa-envelope"></i><span>frontenddevmichael@gmail.com</span></i>
+                    </div>
+                    <div class="info-detail">
+                        <i class="fa-solid fa-phone"></i><span>+234 9061712509</span>
+                    </div>
+                </div>
+                <div class="about-details">
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/michael-omale-b63406354/">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/frontenddevmichael"><i class="fa-brands fa-github"></i></a>
+
+                        <a
+                            href="https://wa.me/2349061712509?text=Hello%20Michael%2C%20I%20just%20visited%20your%20portfolio%20and%20would%20like%20to%20connect!"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Advanced ICT Certification</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lagos, Nigeria</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Multidisciplinary Expertise</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-language"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="about-buttons">
+                        <a href="#contact-me" class="btn btn-primary btn-sm" id="cntct-btn">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="/Omale_Michael_CV.pdf" class="btn btn-outline btn-sm" id="#dnld-btn"
+                            style="color: white;">
+                            <i class="fas fa-file-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <h2 class="navname"><span>frontEndDev</span>Mike</h2>
+                <p id="time"></p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-social">
+                <h3>Connect</h3>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Omale Michael | Developed By OCM</p>
+            <a href="#home" class="back-to-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+
+    <!-- Particle Background Script -->
+    <script>
+        (() => {
+            const CONFIG = {
+                particles: 150,
+                particleSize: 2,
+                speed: 0.3,
+                connectDistance: 140,
+                maxConnections: 6,
+            };
+
+            const canvas = document.getElementById("web-bg");
+            const ctx = canvas.getContext("2d");
+            let width, height, particles;
+
+            const getColor = () => {
+                const styles = getComputedStyle(document.documentElement);
+                return styles.getPropertyValue('--color-highlight').trim() || '#FFFFFF';
+            };
+
+            function resize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * devicePixelRatio;
+                canvas.height = height * devicePixelRatio;
+                canvas.style.width = width + "px";
+                canvas.style.height = height + "px";
+                ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+                initParticles();
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < CONFIG.particles; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * CONFIG.speed,
+                        vy: (Math.random() - 0.5) * CONFIG.speed,
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+                const color = getColor();
+                ctx.fillStyle = color;
+
+                for (let p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, CONFIG.particleSize, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p1 = particles[i];
+                    let connections = 0;
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dx = p1.x - p2.x;
+                        let dy = p1.y - p2.y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < CONFIG.connectDistance) {
+                            ctx.strokeStyle = `rgba(255,255,255,${0.3 * (1 - dist / CONFIG.connectDistance)})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                            connections++;
+                            if (connections > CONFIG.maxConnections) break;
+                        }
+                    }
+                }
+            }
+
+            function update() {
+                for (let p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+                }
+            }
+
+            function loop() {
+                update();
+                draw();
+                requestAnimationFrame(loop);
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+            loop();
+        })();
+    </script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

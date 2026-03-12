@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import heorImg from "./assets/Michael.png";
 
 export default function Hero() {
     const cursorDotRef = useRef(null);

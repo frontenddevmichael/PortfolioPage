@@ -161,39 +161,6 @@
   padding: 0;
 }
 
-* {
-  cursor: none !important;
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-accent);
-  border: 2px solid var(--color-border);
-  border-radius: 0;
-  /* brutalist square dot */
-  pointer-events: none;
-  z-index: var(--z-toast);
-  will-change: transform;
-}
-
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--color-border);
-  border-radius: 0;
-  pointer-events: none;
-  z-index: calc(var(--z-toast) - 1);
-  will-change: transform;
-  transition: width 0.2s ease, height 0.2s ease;
-}
-
 
 ::-webkit-scrollbar-track {
   background-color: var(--color-accent);

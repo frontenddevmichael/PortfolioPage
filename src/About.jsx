@@ -50,7 +50,7 @@ function Counter({ target, suffix = "", trigger }) {
    REDACTED LINE — reveals on hover
 ───────────────────────────────────────── */
 function RedactedLine({ text, delay = 0 }) {
-    const [revealed, setRevealed] = useState(false);
+    const [revealed, setRevealed] = useState(true);
 
     return (
         <span
@@ -122,12 +122,6 @@ export default function About() {
                             <span className="about__field-value">{value}</span>
                         </div>
                     ))}
-
-                    {/* STAMP */}
-                    <div className={`about__stamp${inView ? " about__stamp--visible" : ""}`}>
-                        <span>CLEARANCE</span>
-                        <span>GRANTED</span>
-                    </div>
                 </div>
 
                 {/* RIGHT — redacted bio + stats */}
@@ -135,7 +129,6 @@ export default function About() {
 
                     <div className="about__bio-label">
                         <span>// SUBJECT BIOGRAPHY</span>
-                        <span className="about__bio-instruction">[ HOVER TO DECLASSIFY ]</span>
                     </div>
 
                     <div className="about__bio">

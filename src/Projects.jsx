@@ -59,16 +59,7 @@ const PROJECTS = [
         featured: false,
     },
 
-}
-id:"05",
-img:null,
-name: "Chatbot studio"
-type: "React . Supabase"
-year : "2025",
-description "Chatbot studio is a 2 layered system no code faq bot built to intelligently answer questions about your buisness.",
-link: "https://www.chatbotstudio.dev/",
-featured: false,
-},
+
 ];
 
 function ProjectCard({ project, index, inView }) {

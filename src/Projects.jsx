@@ -3,6 +3,9 @@ import portfolio from "..//src/assets/Portfolio.png";
 import primeaxis from "..//src/assets/Primeaxis.png";
 import FoodMate from "..//src/assets/FoodMate.png";
 import synapse from "..//src/assets/synapse.png";
+import bmwarchive from "..//src/assets/bmw-archive.png";
+import templateStudios from "..//src/assets/template-studios.png";
+import studyFlow from "..//src/assets/studyflow.png";
 import Chatbotstudio from "..//src/assets/Chatbotstudio.png";
 function useInView(ref, threshold = 0.1) {
     const [inView, setInView] = useState(false);
@@ -67,6 +70,37 @@ const PROJECTS = [
         year: "2026",
         description: "ChatbotStudio is an AI-powered chatbot development platform built with React, designed to help users create and deploy intelligent chatbots efficiently.",
         link: "https://www.chatbotstudio.dev/",
+        featured: false,
+    },
+    {
+        id: "06",
+        img: bmwarchive,
+        name: "BMW Archive",
+        type: "React · Supabase",
+        year: "2026",
+        description: "BMW Archive is a digital repository for preserving and showcasing the history of the BMW brand.",
+        link: "https://bmw-archive.vercel.app/",
+        featured: false,
+    },
+
+    {
+        id: "07",
+        img: templateStudios,
+        name: "Template Studios",
+        type: "React · Supabase",
+        year: "2026",
+        description: "Template Studios is a digital agency specializing in creating modern, responsive websites and application userinterface, and brand design.",
+        link: " https://template-studios.vercel.app/",
+        featured: false,
+    },
+    {
+        id: "08",
+        img: studyFlow,
+        name: "Study Flow",
+        type: "React · Supabase",
+        year: "2026",
+        description: "Study Flow is an AI-powered learning platform designed to help students optimize their study habits and improve academic performance.",
+        link: "https://studyflow-focus.vercel.app/",
         featured: false,
     },
 

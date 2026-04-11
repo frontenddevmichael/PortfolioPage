@@ -7,6 +7,7 @@ import bmwarchive from "..//src/assets/bmw-archive.png";
 import templateStudios from "..//src/assets/template-studios.png";
 import studyFlow from "..//src/assets/studyflow.png";
 import Chatbotstudio from "..//src/assets/Chatbotstudio.png";
+import zeno from "..//src/assets/zeno.png";
 function useInView(ref, threshold = 0.1) {
     const [inView, setInView] = useState(false);
     useEffect(() => {
@@ -101,6 +102,16 @@ const PROJECTS = [
         year: "2026",
         description: "Study Flow is an AI-powered learning platform designed to help students optimize their study habits and improve academic performance.",
         link: "https://studyflow-focus.vercel.app/",
+        featured: false,
+    },
+    {
+        id: "09",
+        img: zeno,
+        name: "Zeno",
+        type: "React · Supabase",
+        year: "2026",
+        description: "Zeno is a Nigerian based e-commerce platform for tech gadgets.",
+        link: "https://zeno-self-eta.vercel.app/",
         featured: false,
     },
 

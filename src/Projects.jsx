@@ -3,6 +3,7 @@ import portfolio from "..//src/assets/Portfolio.png";
 import primeaxis from "..//src/assets/Primeaxis.png";
 import FoodMate from "..//src/assets/FoodMate.png";
 import synapse from "..//src/assets/synapse.png";
+import Chatbotstudio from "..//src/assets/Chatbotstudio.png";
 function useInView(ref, threshold = 0.1) {
     const [inView, setInView] = useState(false);
     useEffect(() => {
@@ -52,10 +53,20 @@ const PROJECTS = [
         id: "04",
         img: synapse,
         name: "Synapse",
-        type: "React · API",
-        year: "2025",
+        type: "React · Supabase",
+        year: "2026",
         description: "Synapse is an AI-powered quizing platform built with React, designed to help users learn and retain information effectively through interactive quizzes.",
         link: "https://synapse-khaki.vercel.app/dashboard",
+        featured: false,
+    },
+    {
+        id: "05",
+        img: Chatbotstudio,
+        name: "ChatbotStudio",
+        type: "React · Supabase",
+        year: "2026",
+        description: "ChatbotStudio is an AI-powered chatbot development platform built with React, designed to help users create and deploy intelligent chatbots efficiently.",
+        link: "https://www.chatbotstudio.dev/",
         featured: false,
     },
 
@@ -134,13 +145,6 @@ export default function Projects() {
                 ))}
             </div>
 
-            <div className={`projects__cta-row${inView ? " projects__cta-row--visible" : ""}`}>
-                <span className="projects__cta-line" />
-                <a href="https://github.com" className="projects__github-btn" target="_blank" rel="noopener noreferrer">
-                    MORE ON GITHUB →
-                </a>
-                <span className="projects__cta-line" />
-            </div>
 
         </section>
     );

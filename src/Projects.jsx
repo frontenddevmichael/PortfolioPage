@@ -8,6 +8,7 @@ import templateStudios from "..//src/assets/template-studios.png";
 import studyFlow from "..//src/assets/studyflow.png";
 import Chatbotstudio from "..//src/assets/Chatbotstudio.png";
 import zeno from "..//src/assets/zeno.png";
+import elliotGlobalProperties from "..//src/assets/elliotGlobalProperties.png"
 function useInView(ref, threshold = 0.1) {
     const [inView, setInView] = useState(false);
     useEffect(() => {
@@ -112,6 +113,16 @@ const PROJECTS = [
         year: "2026",
         description: "Zeno is a Nigerian based e-commerce platform for tech gadgets.",
         link: "https://zeno-self-eta.vercel.app/",
+        featured: false,
+    },
+    {
+        id: "10",
+        img: elliotGlobalProperties,
+        name: "Elliot Global  Properties",
+        type: "React js . css",
+        year: "2026",
+        description: "Elliot Global Ltd is on eof Nigeria's most trusted real estate soutions company",
+        link: "www.elliotglobalproperties.com",
         featured: false,
     },
 

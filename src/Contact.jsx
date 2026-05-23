@@ -58,9 +58,24 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (!form.name || !form.email || !form.message) return;
+
+        const text = `
+NEW PORTFOLIO ENQUIRY
+
+Name: ${form.name}
+Email: ${form.email}
+
+Message:
+${form.message}
+    `;
+
+        const whatsappURL = `https://wa.me/2349061712509?text=${encodeURIComponent(text)}`;
+
+        window.open(whatsappURL, "_blank");
+
         setSubmitted(true);
-        // wire up EmailJS / Formspree here later
     };
 
     const handleReset = () => {

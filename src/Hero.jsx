@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useParallax } from "./hooks/useParallax";
 
 function useEasterEggs() {
   const [active, setActive] = useState(false);
@@ -29,6 +30,8 @@ export default function Hero({ scrollProgress = 0 }) {
   const cursorDotRef = useRef(null);
   const cursorRingRef = useRef(null);
   const [mounted, setMounted] = useState(false);
+  const shapesRef = useRef(null);
+  useParallax(shapesRef, -0.08);
   const [bootDone, setBootDone] = useState(false);
   const [bootVisible, setBootVisible] = useState(true);
   const [cursorOverLink, setCursorOverLink] = useState(false);
@@ -158,7 +161,7 @@ export default function Hero({ scrollProgress = 0 }) {
         <div className="hero__grid" aria-hidden="true" />
 
         {/* Floating shapes */}
-        <div className="hero__floating-shapes" aria-hidden="true">
+        <div className="hero__floating-shapes" ref={shapesRef} aria-hidden="true">
           <div className="hero__shape hero__shape--circle" />
           <div className="hero__shape hero__shape--square" />
           <div className="hero__shape hero__shape--diamond" />

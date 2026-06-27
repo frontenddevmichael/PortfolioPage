@@ -1,8 +1,6 @@
-import { useEffect, useState, useRef, useMemo } from "react";
-import Lenis from "lenis";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "./ThemeContext";
 import { ScrollContext } from "./ScrollContext";
-import { useIsMobile } from "./hooks/useIsMobile";
 import Nav from "./Nav"
 import Hero from "./Hero"
 import Skills from "./Skills"
@@ -29,46 +27,17 @@ function MobileCta() {
 export default function App() {
   const [progress, setProgress] = useState(0);
   const [scrollY, setScrollY] = useState(0);
-  const lenisRef = useRef(null);
-  const isMobile = useIsMobile(768);
-
-  const lenisConfig = useMemo(() => isMobile ? {
-    duration: 0.3,
-    easing: (t) => t,
-    smoothWheel: false,
-    touchMultiplier: 1.5,
-    syncTouch: true,
-  } : {
-    duration: 0.7,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -12 * t)),
-    smoothWheel: true,
-    wheelMultiplier: 0.9,
-    touchMultiplier: 1.2,
-    syncTouch: true,
-  }, [isMobile]);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      orientation: "vertical",
-      ...lenisConfig,
-    });
-
-    lenisRef.current = lenis;
-
-    lenis.on("scroll", (e) => {
-      const max = e.limit || 1;
-      setProgress(max > 0 ? (e.progress || 0) * 100 : 0);
-      setScrollY(e.scroll || 0);
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
-  }, [lenisConfig]);
+    const onScroll = () => {
+      const sy = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(docHeight > 0 ? Math.min(sy / docHeight, 1) * 100 : 0);
+      setScrollY(sy);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <ThemeProvider>

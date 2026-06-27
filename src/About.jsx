@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import { useInView } from "./hooks/useInView";
 import ScrambleText from "./ScrambleText";
 
-function Counter({ target, suffix = "", trigger }) {
+function Counter({ target, suffix = "" }) {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
-    if (!trigger) return;
     let start = 0;
     const duration = 1400;
     const step = 16;
@@ -21,25 +18,13 @@ function Counter({ target, suffix = "", trigger }) {
       }
     }, step);
     return () => clearInterval(timer);
-  }, [trigger, target]);
-
+  }, [target]);
   return <>{count}{suffix}</>;
 }
 
-function RedactedLine({ text, delay = 0 }) {
-  return (
-    <span className="about__redacted about__redacted--revealed" style={{ "--rd": `${delay}s` }}>
-      {text}
-    </span>
-  );
+function RedactedLine({ text }) {
+  return <span className="about__redacted">{text}</span>;
 }
-
-const STATS = [
-  { value: 2, suffix: "+", label: "Years building" },
-  { value: 7, suffix: "+", label: "Projects shipped" },
-  { value: 100, suffix: "%", label: "No dark patterns" },
-  { value: 0, suffix: "", label: "Boring sites made" },
-];
 
 const FIELDS = [
   { label: "SUBJECT", value: "Michael OMale" },
@@ -47,6 +32,13 @@ const FIELDS = [
   { label: "LOCATION", value: "Nigeria — Remote Ready" },
   { label: "STATUS", value: "Available for deployment" },
   { label: "CLEARANCE", value: "React · CSS · JS · HTML · Figma" },
+];
+
+const STATS = [
+  { value: 2, suffix: "+", label: "Years building" },
+  { value: 7, suffix: "+", label: "Projects shipped" },
+  { value: 100, suffix: "%", label: "No dark patterns" },
+  { value: 0, suffix: "", label: "Boring sites made" },
 ];
 
 const TIMELINE = [
@@ -57,121 +49,112 @@ const TIMELINE = [
 ];
 
 export default function About() {
-  const [sectionRef, inView] = useInView(0.1);
   const [activeTimeline, setActiveTimeline] = useState(null);
 
   return (
-    <section id="about" className="about" ref={sectionRef}>
-      <div className="about__scanlines" />
+    <section id="about" className="about">
+      <div className="about__inner">
 
-      <div className={`about__header${inView ? " about__header--visible" : ""}`}>
-        <div className="about__file-tag">
-          <span className="about__file-label">FILE</span>
-          <span className="about__file-num">MO-2025-001</span>
-        </div>
-        <h2 className="about__title"><ScrambleText text="DOSSIER" /></h2>
-        <div className="about__classified-badge">CLASSIFIED</div>
-      </div>
-
-      <div className="about__grid">
-        <div className={`about__fields${inView ? " about__fields--visible" : ""}`}>
-          {FIELDS.map(({ label, value }, i) => (
-            <div key={label} className="about__field" style={{ "--fi": i }}>
-              <span className="about__field-label">{label}</span>
-              <span className="about__field-value">{value}</span>
-            </div>
-          ))}
-          <div className="about__stamp" />
-        </div>
-
-        <div className={`about__right${inView ? " about__right--visible" : ""}`}>
-          <div className="about__bio-label">
-            <span>// SUBJECT BIOGRAPHY</span>
+        <header className="about__header">
+          <div className="about__file-tag">
+            <span className="about__file-label">FILE</span>
+            <span className="about__file-num">MO-2025-001</span>
           </div>
+          <h2 className="about__title"><ScrambleText text="DOSSIER" /></h2>
+          <span className="about__badge">CLASSIFIED</span>
+        </header>
 
-          <div className="about__bio">
-            <p className="about__bio-para">
-              <RedactedLine text="I build interfaces that make people stop scrolling." delay={0} />{" "}
-              <RedactedLine text="Not because of tricks or gimmicks —" delay={0.05} />{" "}
-              <RedactedLine text="because the work is honest, precise, and considered." delay={0.1} />
-            </p>
-            <p className="about__bio-para">
-              <RedactedLine text="Frontend development, to me, is the last mile between an idea and a human." delay={0.05} />{" "}
-              <RedactedLine text="I take that seriously." delay={0.1} />{" "}
-              <RedactedLine text="Every pixel, every transition, every line of markup has a reason." delay={0.15} />
-            </p>
-            <p className="about__bio-para">
-              <RedactedLine text="I work in React, write real CSS, and design in Figma." delay={0.1} />{" "}
-              <RedactedLine text="I care about performance, accessibility, and not making ugly things." delay={0.15} />
-            </p>
-          </div>
-
-          {/* Manifesto */}
-          <div className="about__manifesto">
-            <span className="about__manifesto-label">// MANIFESTO</span>
-            <p>
-              I believe the best interfaces feel <strong>inevitable</strong> — like they
-              were always meant to exist. I don't chase trends. I chase clarity,
-              performance, and the kind of polish that most people won't notice
-              but everyone will feel.
-            </p>
-            <p>
-              Every project gets the same treatment: <strong>think first, build
-              second, refine until it's right</strong>.
-            </p>
-          </div>
-
-          {/* Timeline */}
-          <div className="about__timeline">
-            <span className="about__timeline-label">// CAREER TIMELINE</span>
-            <div className="about__timeline-track">
-              <div className="about__timeline-line">
-                <div
-                  className="about__timeline-line-fill"
-                  style={{ width: inView ? "100%" : "0%" }}
-                />
+        <div className="about__card">
+          <div className="about__fields">
+            {FIELDS.map(({ label, value }) => (
+              <div key={label} className="about__field">
+                <span className="about__field-label">{label}</span>
+                <span className="about__field-value">{value}</span>
               </div>
+            ))}
+          </div>
+          <span className="about__stamp">APPROVED</span>
+        </div>
+
+        <div className="about__card">
+          <span className="about__card-label">// SUBJECT BIOGRAPHY</span>
+          <div className="about__bio">
+            <p>
+              <RedactedLine text="I build interfaces that make people stop scrolling." />{" "}
+              <RedactedLine text="Not because of tricks or gimmicks —" />{" "}
+              <RedactedLine text="because the work is honest, precise, and considered." />
+            </p>
+            <p>
+              <RedactedLine text="Frontend development, to me, is the last mile between an idea and a human." />{" "}
+              <RedactedLine text="I take that seriously." />{" "}
+              <RedactedLine text="Every pixel, every transition, every line of markup has a reason." />
+            </p>
+            <p>
+              <RedactedLine text="I work in React, write real CSS, and design in Figma." />{" "}
+              <RedactedLine text="I care about performance, accessibility, and not making ugly things." />
+            </p>
+          </div>
+        </div>
+
+        <div className="about__card">
+          <span className="about__card-label">// MANIFESTO</span>
+          <p className="about__manifesto-text">
+            I believe the best interfaces feel <strong>inevitable</strong> — like they
+            were always meant to exist. I don't chase trends. I chase clarity,
+            performance, and the kind of polish that most people won't notice
+            but everyone will feel.
+          </p>
+          <p className="about__manifesto-text">
+            Every project gets the same treatment: <strong>think first, build
+            second, refine until it's right</strong>.
+          </p>
+        </div>
+
+        <div className="about__card">
+          <span className="about__card-label">// CAREER TIMELINE</span>
+          <div className="about__timeline">
+            <div className="about__timeline-bar" />
+            <div className="about__timeline-fill" />
+            <div className="about__timeline-nodes">
               {TIMELINE.map((item) => (
-                <div
+                <button
                   key={item.year}
-                  className={`about__timeline-node${activeTimeline === item.year ? " about__timeline-node--active" : ""}`}
+                  className={`about__timeline-node${activeTimeline === item.year ? " is-active" : ""}`}
                   onClick={() => setActiveTimeline(activeTimeline === item.year ? null : item.year)}
                 >
-                  <div className="about__timeline-dot" />
+                  <span className="about__timeline-dot" />
                   <span className="about__timeline-year">{item.year}</span>
-                </div>
+                </button>
               ))}
             </div>
-            {activeTimeline && (
-              <div className="about__timeline-card about__timeline-card--open">
-                <div className="about__timeline-card-title">
-                  {TIMELINE.find((t) => t.year === activeTimeline)?.title}
-                </div>
-                <div className="about__timeline-card-desc">
-                  {TIMELINE.find((t) => t.year === activeTimeline)?.desc}
-                </div>
-              </div>
-            )}
           </div>
+          {activeTimeline && (
+            <div className="about__timeline-card">
+              <strong>{TIMELINE.find((t) => t.year === activeTimeline)?.title}</strong>
+              <p>{TIMELINE.find((t) => t.year === activeTimeline)?.desc}</p>
+            </div>
+          )}
+        </div>
 
-          {/* Stats */}
+        <div className="about__card">
           <div className="about__stats">
-            {STATS.map(({ value, suffix, label }, i) => (
-              <div key={label} className="about__stat" style={{ "--si": i }}>
+            {STATS.map(({ value, suffix, label }) => (
+              <div key={label} className="about__stat">
                 <span className="about__stat-value">
-                  <Counter target={value} suffix={suffix} trigger={inView} />
+                  <Counter target={value} suffix={suffix} />
                 </span>
                 <span className="about__stat-label">{label}</span>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      <div className={`about__footer-strip${inView ? " about__footer-strip--visible" : ""}`}>
-        <span>END OF FILE — MO-2025-001</span>
-        <span>UNAUTHORIZED REPRODUCTION PROHIBITED</span>
-        <span>MICHAEL OMALE © {new Date().getFullYear()}</span>
+        <footer className="about__footer">
+          <span>END OF FILE — MO-2025-001</span>
+          <span>UNAUTHORIZED REPRODUCTION PROHIBITED</span>
+          <span>MICHAEL OMALE © {new Date().getFullYear()}</span>
+        </footer>
+
       </div>
     </section>
   );
